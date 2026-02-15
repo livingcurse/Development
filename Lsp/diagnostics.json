@@ -33,6 +33,7 @@
     "robloxLsp.diagnostics.disable": [
         "unused-local",
         "redefined-local",
-        "unbalanced-assignments"
+        "unbalanced-assignments",
+        "forward-local"
     ]
 }
