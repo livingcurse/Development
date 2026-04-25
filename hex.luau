@@ -1,10 +1,6 @@
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
 repeat task.wait() until game:IsLoaded();
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/DiosDi/VexonHub/refs/heads/main/WindUI"))()
 
---Goofy anti-staff
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RiderOfRise67/SkidRiseHUB/refs/heads/main/AntiStaff.lua"))()
 
 WindUI:AddTheme({
@@ -75,7 +71,7 @@ WindUI:AddTheme({
 })
 
 WindUI:AddTheme({
-	Name = 'Rise',
+	Name = 'Root',
 	Accent = '#ff3131',
 	Dialog = '#2a0505',
 	Outline = '#5c0000',
@@ -86,9 +82,7 @@ WindUI:AddTheme({
 	Icon = '#ff3131',
 })
 
-
 WindUI:SetNotificationLower(true)
-
 
 local themes = {
 	'Dark',
@@ -97,7 +91,7 @@ local themes = {
 	'Blue',
 	'Green',
 	'Red',
-	'Rise',
+	'Root',
 }
 local currentThemeIndex = 1
 
@@ -108,19 +102,19 @@ end
 
 
 Window = WindUI:CreateWindow({
-	Title = 'RiseHub',
-	Icon = 'crown', -- bu icon yerine kendi logonun id sini koyabilirsin şöyle: rbxassetid://84519376661277
-	Author = 'Evade',
-	Folder = 'risehub', -- bune bilmiyom ama config ile alakalı muhtemlen
+	Title = 'Hate Hexagon',
+	Icon = 'sigma', -- bu icon yerine kendi logonun id sini koyabilirsin şöyle: rbxassetid://84519376661277
+	Author = 'github.com/livingcurse',
+	Folder = 'HateHexagon', -- bune bilmiyom ama config ile alakalı muhtemlen
 	Size = UDim2.fromOffset(500, 240), --ui ın boyutunu ayarlıyon benimkiyle aynı şuan
 	Transparent = getgenv().TransparencyEnabled, -- ui daki profil bastında tema deyişiyo onun silsoku bu
-	Theme = 'Rise', -- buraya ilk açıldında olacak tema
+	Theme = 'Dark', -- buraya ilk açıldında olacak tema
 	Background = 'rbxassetid://81101282829716', -- buraya fotoyu koyacan arka pilanın
 	Resizable = true, -- ui boyutu sağ alttan ayarlana bilirmi onu ayarlıyon
 	NewElements = true, -- hatırlamıyom bunu ehe ama iyi bişey trust
 	CornerRadius = UDim.new(0, 0), -- kenar yumuşaklı
 	SideBarWidth = 210, -- şu tabların oldu yerin büyüklü
-	BackgroundImageTransparency = 0.8, -- arka pilandaki fotonun saydamlı
+	BackgroundImageTransparency = 1, -- arka pilandaki fotonun saydamlı
 	HideSearchBar = false, -- tabların en üstünde arama yeri varya onu aç kapa yapıyo
 	ScrollBarEnabled = true, -- şu tabların ve tabın içindeki yerlerde alta yukarı kaydırma yapan şey varya onu aç kapa yapıyo
 	User = {
@@ -148,9 +142,9 @@ Window = WindUI:CreateWindow({
 })
 
 Window:Tag({
-	Title = 'Freemium',
-	Icon = 'crown',
-	Color = Color3.fromHex('#FF0006'),
+	Title = 'Up to Date',
+	Icon = 'check',
+	Color = Color3.fromHex('#a9f5c0'),
 	Radius = 4,
 })
 
@@ -191,7 +185,7 @@ end)
 
 
 Window:EditOpenButton({
-	Title = 'RiseHub',
+	Title = 'Hate Hexagon',
 	CornerRadius = UDim.new(0, 6),
 	StrokeThickness = 2,
 	Color = ColorSequence.new(Color3.fromRGB(100, 0, 0), Color3.fromRGB(200, 0, 0)),
@@ -216,8 +210,8 @@ Tabs.CreditsTab = Window:Tab({ Title = "Credits", Icon = "crown", Desc = "All Cr
 Window:SelectTab(Tabs.MainTab)
 
 Tabs.MainTab:Paragraph({
-	Title = "Welcome to Rise Script!",
-	Desc = "Rise Script is the highest quality Roblox script. </3",
+	Title = "Hexevade",
+	Desc = "Hate Hexagon is the perfect utility for Hexagon Development games. Show support via. my GitHub profile! (@livingcurse)",
 
 })
 
@@ -236,10 +230,10 @@ Tabs.MainTab:ButtonKeybind({
 
 Tabs.MainTab:Button({
 	Title = "Discord Server",
-	Desc = "The link to our Discord server that you will click on is copied.",
+	Desc = "Join our Discord server to report bugs, suggest features and more!",
 	Locked = false,
 	Callback = function()
-		setclipboard("discord.gg/risehub")
+		setclipboard("https://discord.gg/HTxApgUkCR")
 	end
 })
 
@@ -331,8 +325,8 @@ local function applyToTables(callback)
 end
 
 SettingsSection:Input({
-	Title = "Player Speed",
-	Desc = "Set the movement speed (Default 1500).",
+	Title = "Base Movement Speed",
+	Desc = "Edit your movement speed (default is 1500).",
 	Value = "1500",
 	Placeholder = "1500",
 	Callback = function(Value)
@@ -347,8 +341,8 @@ SettingsSection:Input({
 })
 
 SettingsSection:Input({
-	Title = "Player Jump",
-	Desc = "Set player jump power (Default 3.5).",
+	Title = "Base Jumppower",
+	Desc = "Edit your jump power (default is 3.5).",
 	Value = "3.5",
 	Placeholder = "3.5",
 	Callback = function(Value)
@@ -359,8 +353,8 @@ SettingsSection:Input({
 })
 
 SettingsSection:Input({
-	Title = "Player Jump Cap",
-	Desc = "Limit the jump height (Default 1).",
+	Title = "Vertical Height Limit",
+	Desc = "Edit your jump height restriction (default is 1).",
 	Value = "1",
 	Placeholder = "1",
 	Callback = function(Value)
@@ -375,8 +369,8 @@ SettingsSection:Input({
 })
 
 SettingsSection:Input({
-	Title = "Player Strafe Acceleration",
-	Desc = "Air control acceleration (Default 187).",
+	Title = "Strafe Acceleration",
+	Desc = "Edit your strafing speed gain (default is 187).",
 	Value = "187",
 	Placeholder = "187",
 	Callback = function(Value)
@@ -392,8 +386,8 @@ SettingsSection:Input({
 
 
 SettingsSection:Dropdown({
-	Title = "Select Apply Method",
-	Desc = "Choose between Optimized or Not Optimized logic.",
+	Title = "Method",
+	Desc = "Choose your stat application logic.",
 	Values = {"Not Optimized", "Optimized"},
 	Value = "Not Optimized",
 	Callback = function(Value)
